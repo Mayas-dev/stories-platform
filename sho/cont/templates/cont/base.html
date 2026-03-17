@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Story Website</title>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #f5f5f5; 
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #2c3e50; 
+            color: white;
+            padding: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Story Website</h1>
+
+<nav>
+
+<a href="/published-stories/">Stories</a> |
+
+<a href="/submit/">Submit Story</a> |
+
+<a href="/my-stories/">My Stories</a> |
+
+<a href="/login/">Login</a> |
+
+<form method="post" action="{% url 'logout' %}" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+</form>
+
+</nav>
+
+</header>
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+
+</html>

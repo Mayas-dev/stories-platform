@@ -1,0 +1,18 @@
+{% extends "cont\base.html" %}
+
+{% block content %}
+
+<h2>My Stories</h2>
+
+{% for story in stories %}
+    <div>
+        <h3>{{ story.name }}</h3>
+        <p>Status: {{ story.get_status_display }}</p>
+        <p>Submitted: {{ story.created_at }}</p>
+        <hr>
+    </div>
+{% empty %}
+    <p>You haven't submitted any stories yet.</p>
+{% endfor %}
+
+{% endblock %}

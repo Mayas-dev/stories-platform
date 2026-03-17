@@ -1,0 +1,26 @@
+{% extends "cont\base.html" %}
+
+{% block content %}
+
+<h2>Published Stories</h2>
+
+{% if stories %}
+
+    {% for story in stories %}
+        <h3>
+            <a href="{% url 'story_detail' story.pk %}">
+                {{ story.name }}
+            </a>
+        </h3>
+        <p>{{ story.created_at }}</p>
+        <hr>
+    {% endfor %}
+
+{% else %}
+
+<h3>There are no stories yet</h3>
+<p>Be the first to submit one!</p>
+
+{% endif %}
+
+{% endblock %}

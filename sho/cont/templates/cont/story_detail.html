@@ -1,0 +1,18 @@
+{% extends "cont\base.html" %}
+
+{% block content %}
+
+<h2>{{ story.name }}</h2>
+
+<p>
+    Genre: {{ story.get_genre_display }} |
+    Audience: {{ story.get_audience_display }}
+</p>
+
+<p>By {{ story.user.username }}</p>
+
+<hr>
+
+<p>{{ story.content|linebreaks }}</p>
+
+{% endblock %}
